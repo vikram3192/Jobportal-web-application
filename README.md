@@ -56,7 +56,7 @@ pip install -r requirements.txt
 ### 4.Configure environment variables
   1.Copy the example file:  
     cp .env.example .env
-  2.Update .env with your own values:
+  2.Update .env with your own values
  
 
 ### 5. Set up the database

@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+myvenv/
+.env
+.env.*
+JOB_PORTAL/uploads/
+
+# IDEs & OS
+.vscode/
+.idea/
+.DS_Store

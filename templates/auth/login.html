@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Job Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Login</h2>
+
+    <!-- Tabs -->
+    <div class="tab-buttons">
+      <button type="button" class="active" data-target="userLogin">User</button>
+      <button type="button" data-target="employerLogin">Employer</button>
+    </div>
+
+    <!-- User Login Form -->
+    <form id="userLogin" class="form-tab active">
+      <div class="input-group">
+        <label for="user_identifier">Email or Mobile</label>
+        <input id="user_identifier" type="text" name="identifier" placeholder="📧 Email or 📱 Mobile" required>
+      </div>
+
+      <div class="input-group">
+        <label for="user_password">Password</label>
+        <input id="user_password" type="password" name="password" placeholder="Enter your password" required minlength="8">
+      </div>
+
+      <button type="submit" class="btn">Login as User</button>
+      <div class="alert alert-error" id="userError" role="alert" aria-live="polite" style="display:none;"></div>
+    </form>
+
+    <!-- Employer Login Form -->
+    <form id="employerLogin" class="form-tab">
+      <div class="input-group">
+        <label for="emp_identifier">Organization Email or Mobile</label>
+        <input id="emp_identifier" type="text" name="identifier" placeholder="📧 Org Email or 📱 Mobile" required>
+      </div>
+
+      <div class="input-group">
+        <label for="emp_password">Password</label>
+        <input id="emp_password" type="password" name="password" placeholder="Enter your password" required minlength="8">
+      </div>
+
+      <button type="submit" class="btn">Login as Employer</button>
+      <div class="alert alert-error" id="empError" role="alert" aria-live="polite" style="display:none;"></div>
+    </form>
+
+    <div class="form-footer">
+      Don’t have an account? <a href="{{ url_for('register_page') }}">Register</a>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

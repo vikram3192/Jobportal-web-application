@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>User Dashboard - Job Portal</title>
+  <link rel="stylesheet" href="/static/css/common.css" />
+  <link rel="stylesheet" href="/static/css/user_dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>My Jobs</h2>
+    <div class="search-bar">
+      <form id="searchForm" onsubmit="return false;">
+      <input id="searchInput" type="text" placeholder="🔍 Search jobs here.." />
+      <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    <div class="icon-container">
+      <div class="menu-icon"><i class="fas fa-bars"></i></div>
+       <div class="profile-icon" role="button" aria-label="Open profile"><i class="fas fa-user"></i></div>
+       <!-- 🌙 Dark Mode Toggle -->
+      <button id="darkModeToggle" class="dark-toggle-btn" title="Toggle Dark Mode">
+      <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar" aria-hidden="true">
+    <span class="close-btn" role="button" aria-label="Close sidebar">&times;</span>
+    <div class="profile-pic">
+      <img id="profilePic" src="/static/images/default-user.png" alt="Profile picture" />
+      <form id="profileUploadForm" enctype="multipart/form-data" class="upload-form">
+        <label for="profileUpload" class="upload-icon" title="Upload profile picture">
+          <i class="fas fa-camera"></i>
+        </label>
+        <input type="file" id="profileUpload" name="profile_pic" accept="image/*" />
+      </form>
+      <button id="removeProfileBtn" class="remove-btn">Remove</button>
+    </div>
+    <p><b>Name:</b> <span id="userName"></span></p>
+    <p><b>Email:</b> <span id="userEmail"></span></p>
+    <p><b>Mobile:</b> <span id="userMobile"></span></p>
+    <button id="logoutBtn" class="btn">Logout</button>
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <p>Browse and apply for jobs below:</p>
+
+    <div id="pageAlert" class="alert" style="display:none;"></div>
+    
+    <div id="jobGrid" class="job-grid" aria-live="polite"></div>
+    <div id="pagination" class="pagination" role="navigation" aria-label="Pagination"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="/static/js/sidebar.js"></script>
+  <script src="/static/js/user_dashboard.js"></script>
+</body>
+</html>

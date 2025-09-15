@@ -1,0 +1,103 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f7fc;
+  margin: 0;
+  min-height: 100vh;
+}
+.content {
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+} 
+.form-container {
+  background: #fff;
+  padding: 24px;
+  width: 820px;
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  margin: 60px auto 40px; /* center with space for navbar */
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+}
+
+.form-container h2{
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: #023e8a;
+}
+
+.form-container p{
+  margin: 15px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.form-container h3{
+    color: #333;
+}
+
+
+.job-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background: #f1f1f1;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.job-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.job-detail h2 {
+  margin-top: 0;
+  color: #023e8a;
+}
+
+#applyForm .butn{ 
+ width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #0077b6;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+#applyForm .butn[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+.backbutn .butn {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 8px;
+  background: #0077b6;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Alerts */
+.alert {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: left;
+}
+.alert-success { background: #d4edda; color: #155724; }
+.alert-error { background: #f8d7da; color: #721c24; }

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Admin Dashboard - Job Portal</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/common.css" />
+    <link rel="stylesheet" href="/static/css/admin_dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <h2>My Jobs</h2>
+      <div class="search-bar">
+        <form id="searchForm">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="🔍 Search jobs here.."
+          />
+          <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      <div class="icon-container">
+        <div class="menu-icon"><i class="fas fa-bars"></i></div>
+        <div class="profile-icon"><i class="fas fa-user"></i></div>
+        <!-- 🌙 Dark Mode Toggle -->
+        <button
+          id="darkModeToggle"
+          class="dark-toggle-btn"
+          title="Toggle Dark Mode"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <span class="close-btn">&times;</span>
+      <div class="profile-pic">
+        <img
+          id="profilePic"
+          src="/static/images/default-user.png"
+          alt="Profile picture"
+        />
+        <form
+          id="profileUploadForm"
+          enctype="multipart/form-data"
+          class="upload-form"
+        >
+          <label for="profileUpload" class="upload-icon">
+            <i class="fas fa-camera"></i>
+          </label>
+          <input type="file" id="profileUpload" name="profile_pic" />
+        </form>
+        <button id="removeProfileBtn" class="remove-btn">Remove</button>
+      </div>
+      <p><b>Company:</b> <span id="userName"></span></p>
+      <p><b>Email:</b> <span id="userEmail"></span></p>
+      <p><b>Mobile:</b> <span id="userMobile"></span></p>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div id="pageAlert" class="alert" style="display: none"></div>
+
+      <div class="dashboard-grid">
+        <div class="form-container">
+          <h3>Post a New Job</h3>
+          <form id="jobPostForm" enctype="multipart/form-data">
+            <div class="input-group">
+              <label for="title">Job Title</label>
+              <input type="text" name="title" id="title" required />
+            </div>
+            <div class="input-group">
+              <label for="experience">Experience</label>
+              <select name="experience" id="experience" required>
+                <option value="0-1">0-1 years</option>
+                <option value="2-3">2-3 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5+">5+ years</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="salary">Salary (in LPA)</label>
+              <input
+                type="number"
+                name="salary"
+                id="salary"
+                min="1"
+                step="0.5"
+                placeholder="e.g. 6"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="job_type">Job Type</label>
+              <select name="job_type" id="job_type" required>
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Remote">Remote</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="deadline">Application Deadline</label>
+              <input type="date" name="deadline" id="deadline" required />
+            </div>
+
+            <div class="input-group">
+              <label for="location">Location</label>
+              <input type="text" name="location" id="location" required />
+            </div>
+            <div class="input-group">
+              <label for="description">Description</label>
+              <textarea
+                name="description"
+                id="description"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <div class="input-group" id="logoUploadGroup">
+              <label for="logo">Company Logo</label>
+              <input type="file" name="logo" id="logo" accept="image/*" />
+            </div>
+            <button type="submit" class="btn">Post Job</button>
+          </form>
+        </div>
+
+        <div class="job-list-container">
+          <h3>Recent Job Posts</h3>
+          <div id="jobGrid" class="admin-job-list"></div>
+        </div>
+      </div>
+    </div>
+    <!-- JS -->
+    <script src="/static/js/sidebar.js"></script>
+    <script src="/static/js/admin_dashboard.js"></script>
+  </body>
+</html>

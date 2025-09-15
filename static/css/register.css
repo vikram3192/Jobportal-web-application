@@ -1,0 +1,140 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f7fc;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 100vh;
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #2ecc71;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: #eee;
+  transition: 0.3s;
+}
+
+.tab-buttons button.active {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.form-tab { display: none; }
+.form-tab.active { display: block; }
+
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #2ecc71;
+  outline: none;
+  box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2ecc71;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #27ae60;
+}
+
+.form-footer {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.alert {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: center;
+}
+.alert-error { background: #f8d7da; color: #721c24; }
+
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+  position: relative;
+}
+.btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  right: 15px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 400px) {
+  .form-container {
+    padding: 20px;
+  }
+  .input-group input {
+    padding: 8px;
+    font-size: 13px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

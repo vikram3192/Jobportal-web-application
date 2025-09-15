@@ -1,0 +1,405 @@
+/* ---------------- Base ---------------- */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f7fc;
+  margin: 0;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  width: 100%;
+  padding: 5px 50px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.navbar h2 {
+  color: #2907a1;
+  margin-left: 30px;
+  transition: color 0.3s ease;
+}
+
+/* Navbar icons */
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  transform: translateX(-210px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+.menu-icon,
+.profile-icon {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.menu-icon {
+  font-size: 18px;
+  color: #afadad;
+  padding: 6px 10px;
+}
+.profile-icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #afadad;
+  color: white;
+  font-size: 16px;
+}
+
+/* ---------------- Search Bar ---------------- */
+.search-bar {
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  height: 40px;
+  border: 1px solid #ddd;
+  margin-right: 100px;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+.search-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  font-size: 14px;
+  border-radius: 25px 0 0 25px;
+  height: 100%;
+  background: transparent;
+  color: inherit;
+}
+.search-bar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0077b6;
+  border: none;
+  color: white;
+  padding: 0 18px;
+  width: 44px;
+  height: 100%;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.search-bar button:hover {
+  background: #023e8a;
+}
+
+/* ---------------- Sidebar ---------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  transition: 0.3s ease;
+  border-radius: 12px 0 0 12px;
+  transform: translateX(100%);
+  z-index: 2000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar.active {
+  transform: translateX(0);
+}
+.sidebar h3 {
+  margin-bottom: 50px;
+  color: #0031b6;
+  font-size: 20px;
+}
+.sidebar a.btn {
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+.sidebar .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+.sidebar .close-btn:hover {
+  color: #0077b6;
+}
+
+/* Profile picture */
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #0077b6;
+  position: relative;
+}
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.upload-form {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.upload-icon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #0077b6;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.upload-icon:hover {
+  background: #0077b6;
+  color: #fff;
+}
+#profileUpload {
+  display: none;
+}
+.remove-btn {
+  background: transparent;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 8px auto 0;
+  display: block !important;
+  text-align: center;
+}
+.remove-btn:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
+  display: none;
+}
+.overlay.active {
+  display: block;
+}
+
+/* ---------------- Buttons ---------------- */
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #0077b6;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #023e8a;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .search-bar {
+    max-width: 100%;
+  }
+  .icon-container {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark/Light Toggle Button */
+.dark-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #333;
+}
+.dark-toggle-btn:hover {
+  transform: scale(1.2);
+  color: #0077b6;
+}
+
+
+
+/* ========================================================= */
+/* DARK MODE STYLES (global, includes navbar & search bar)   */
+/* ========================================================= */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background: #1e1e1e;
+  color: #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+body.dark-mode .navbar h2 {
+  color: #90caf9;
+}
+body.dark-mode .icon-container {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+body.dark-mode .menu-icon {
+  color: #ccc;
+}
+body.dark-mode .profile-icon {
+  background: #444;
+  color: #eee;
+}
+
+/* Search bar */
+body.dark-mode .search-bar {
+  background: #2a2a2a;
+  border: 1px solid #444;
+}
+body.dark-mode .search-bar input {
+  color: #eee;
+}
+body.dark-mode .search-bar button {
+  background: #2196f3;
+}
+body.dark-mode .search-bar button:hover {
+  background: #1976d2;
+}
+
+/* Sidebar */
+body.dark-mode .sidebar {
+  background: #1e1e1e;
+  color: #eee;
+}
+body.dark-mode .sidebar h3 {
+  color: #90caf9;
+}
+body.dark-mode .sidebar .close-btn {
+  color: #ccc;
+}
+body.dark-mode .sidebar .close-btn:hover {
+  color: #2196f3;
+}
+
+/* Job cards & forms */
+body.dark-mode .job-card,
+body.dark-mode .form-container,
+body.dark-mode .applications-table {
+  background: #1e1e1e;
+  color: #eee;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+body.dark-mode .job-card h4 {
+  color: #90caf9;
+}
+body.dark-mode .job-card p {
+  color: #ddd;
+}
+body.dark-mode .form-container h3 {
+  color: #90caf9;
+}
+
+/* Job logos */
+body.dark-mode .job-logo {
+  background: #2a2a2a;
+}
+body.dark-mode .job-logo img {
+  filter: brightness(0.9) contrast(1.2);
+}
+
+/* Inputs */
+body.dark-mode .form-container input,
+body.dark-mode .form-container textarea,
+body.dark-mode .form-container select {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #e0e0e0;
+}
+body.dark-mode .form-container input::placeholder {
+  color: #aaa;
+}
+
+/* Pagination */
+body.dark-mode .pagination button,
+body.dark-mode .pagination a,
+body.dark-mode .pagination span {
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: #eee;
+}
+body.dark-mode .pagination a:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+/* Alerts */
+body.dark-mode .alert-success {
+  background: #1b5e20;
+  color: #c8e6c9;
+  border: 1px solid #388e3c;
+}
+body.dark-mode .alert-error {
+  background: #b71c1c;
+  color: #ffcdd2;
+  border: 1px solid #ef5350;
+}
+
+/* Badges */
+body.dark-mode .badge {
+  background: #43a047;
+  color: #fff;
+}
+body.dark-mode .dark-toggle-btn {
+  color: #eee;
+}

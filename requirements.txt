@@ -1,0 +1,10 @@
+# requirements.txt — Job Portal project
+Flask==2.2.5
+mysql-connector-python==8.0.34
+python-dotenv==1.0.1
+Werkzeug==2.2.3
+Jinja2==3.0.3
+itsdangerous==2.1.2
+MarkupSafe==2.0.1
+Flask-Cors==3.0.10
+gunicorn==20.1.0

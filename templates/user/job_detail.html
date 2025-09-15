@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Job Details - Job Portal</title>
+  <link rel="stylesheet" href="/static/css/common.css" />
+  <link rel="stylesheet" href="/static/css/job_detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>My Jobs</h2>
+    <div class="icon-container">
+      <div class="menu-icon"><i class="fas fa-bars"></i></div>
+      <div class="profile-icon" role="button" aria-label="Open profile"><i class="fas fa-user"></i></div>
+      <button id="darkModeToggle" class="dark-toggle-btn" title="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar" aria-hidden="true">
+    <span class="close-btn" role="button" aria-label="Close sidebar">&times;</span>
+    <div class="profile-pic">
+      <img id="profilePic" src="/static/images/default-user.png" alt="Profile picture" />
+      <form id="profileUploadForm" enctype="multipart/form-data" class="upload-form">
+        <label for="profileUpload" class="upload-icon" title="Upload profile picture">
+          <i class="fas fa-camera"></i>
+        </label>
+        <input type="file" id="profileUpload" name="profile_pic" accept="image/*" />
+      </form>
+      <button id="removeProfileBtn" class="remove-btn">Remove</button>
+    </div>
+    <p><b>Name:</b> <span id="userName"></span></p>
+    <p><b>Email:</b> <span id="userEmail"></span></p>
+    <p><b>Mobile:</b> <span id="userMobile"></span></p>
+    <button id="logoutBtn" class="btn">Logout</button>
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="form-container">
+      <div class="job-logo">
+        <img id="jobLogo" src="/static/images/default-logo.png" alt="Company Logo" />
+      </div>
+
+      <div class="job-detail">
+        <h2 id="jobTitle"></h2>
+        <p><b>Company:</b> <span id="jobCompany"></span></p>
+        <p><b>Location:</b> <span id="jobLocation"></span></p>
+        <p><b>Experience:</b> <span id="jobExperience"></span></p>
+        <p><b>Salary:</b> <span id="jobSalary"></span></p>
+        <p><b>Job Type:</b> <span id="jobType"></span></p>
+        <p><b>Deadline:</b> <span id="jobDeadline"></span></p>
+        <p><b>Description:</b></p>
+        <p id="jobDescription" style="white-space:pre-wrap;"></p>
+        <hr />
+
+        <!-- Apply Section -->
+        <div id="applySection">
+          <h3>Add your resume</h3>
+          <form id="applyForm" enctype="multipart/form-data">
+            <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx" required />
+            <button type="submit" class="butn">Apply</button>
+          </form>
+          <div id="applyAlert" class="alert" style="display:none;"></div>
+        </div>
+
+        <!-- Already Applied Message -->
+        <div id="alreadyAppliedMsg" class="alert alert-success" style="display:none;">
+          ✅ You have already applied for this job.
+        </div>
+      </div>
+
+      <div class="backbutn">
+        <a href="/user_dashboard" class="butn">← Back to Jobs</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JS -->
+  <script src="/static/js/sidebar.js"></script>
+  <script src="/static/js/user_dashboard.js"></script>
+</body>
+</html>

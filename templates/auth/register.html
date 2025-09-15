@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register - Job Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+  <div class="form-container" id="register">
+    <h2>Register</h2>
+
+    <!-- Tabs -->
+    <div class="tab-buttons">
+      <button type="button" class="active" data-target="userRegister">User</button>
+      <button type="button" data-target="employerRegister">Employer</button>
+    </div>
+
+    <!-- User Registration -->
+    <form id="userRegister" class="form-tab active">
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-group">
+        <label>Mobile Number</label>
+        <input type="tel" name="mobile" placeholder="Enter your 10-digit mobile" pattern="[0-9]{10}" required>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required minlength="8"
+               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+               title="At least 8 characters, 1 uppercase, 1 lowercase, 1 digit">
+      </div>
+
+      <div class="input-group">
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" placeholder="Re-enter your password" required minlength="8">
+      </div>
+
+      <div class="alert alert-error" id="userRegError" role="alert" aria-live="polite" style="display:none;"></div>
+      <button type="submit" class="btn">Register as User</button>
+    </form>
+
+    <!-- Employer Registration -->
+    <form id="employerRegister" class="form-tab">
+      <div class="input-group">
+        <label>Employer Name</label>
+        <input type="text" name="employer_name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="input-group">
+        <label>Organization Name</label>
+        <input type="text" name="organization_name" placeholder="Enter organization name" required>
+      </div>
+
+      <div class="input-group">
+        <label>Organization Email</label>
+        <input type="email" name="organization_email" placeholder="Enter org email" required>
+      </div>
+
+      <div class="input-group">
+        <label>Mobile Number </label>
+        <input type="tel" name="mobile" placeholder="Enter your 10-digit mobile" pattern="[0-9]{10}">
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required minlength="8"
+               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+               title="At least 8 characters, 1 uppercase, 1 lowercase, 1 digit">
+      </div>
+
+      <div class="input-group">
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" placeholder="Re-enter your password" required minlength="8">
+      </div>
+
+      <div class="alert alert-error" id="empRegError" role="alert" aria-live="polite" style="display:none;"></div>
+      <button type="submit" class="btn">Register as Employer</button>
+    </form>
+
+    <div class="form-footer">
+      Already have an account? <a href="{{ url_for('login_page') }}">Login</a>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

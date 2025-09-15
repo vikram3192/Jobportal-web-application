@@ -1,6 +1,6 @@
 # requirements.txt — Job Portal project
 Flask==2.2.5
-mysql-connector-python==8.0.34
+mysql-connector-python==8.0.33
 python-dotenv==1.0.1
 Werkzeug==2.2.3
 Jinja2==3.0.3

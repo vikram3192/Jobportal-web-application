@@ -42,3 +42,25 @@ A full-featured job portal built with **Flask (Python)** and **MySQL** where use
 ```bash
 git clone https://github.com/vikram3192/Jobportal-web-application.git
 cd Jobportal-web-application
+
+### 2.Create & activate a virtual environment
+```bash
+python -m venv venv
+Activate:
+macOS / Linux: source venv/bin/activate
+Windows: venv\Scripts\activate
+
+### 3.Install dependencies
+pip install -r requirements.txt
+
+### 4.Configure environment variables
+  1.Copy the example file:  
+    cp .env.example .env
+  2.Update .env with your own values:
+ 
+
+### 5. Set up the database
+mysql -u root -p < schema.sql
+
+### 6.Run the application
+python app.py

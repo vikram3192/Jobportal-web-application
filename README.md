@@ -1,6 +1,10 @@
 # Job Portal Web Application
 
-A full-featured job portal built with **Flask (Python)** and **MySQL** where users can register, log in, apply for jobs, and employers can post jobs and review applications.
+## 📌 Description
+This is a Job Portal web application built with Flask (Python).
+It provides two main roles: Job Seekers and Employers.
+- Job Seekers (Users): Can register, log in, browse/search jobs, view details, apply by uploading resumes, and manage their profile.
+- Employers: Can register, log in, post jobs, upload a company logo, manage profile, view applications, and download resumes.
 
 ---
 
